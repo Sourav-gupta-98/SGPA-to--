@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SGPA-to-%</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Lemonada:wght@300&family=Yusei+Magic&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Condensed:wght@100&family=Lemonada:wght@300&family=Varela+Round&family=Yusei+Magic&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Condensed:wght@100&family=Lemonada:wght@300&family=Yusei+Magic&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lemonada:wght@300&family=Yusei+Magic&display=swap" rel="stylesheet">
+  <style media="screen">
+    body {
+      background-color: #d3e0ea;
+    }
+
+    .top {
+      position: relative;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-left: 5%;
+    padding-bottom: 90%;
+font-size: 200%;
+      margin-top: 5%;
+      background-color: #f6f5f5;
+      border-radius: 100px;
+      width: 50%;
+      height: 650px;
+
+
+    }
+
+    h1 {
+      position: relative;
+      padding-top: 10%;
+      font-family: 'Dancing Script', cursive;
+      font-family: 'Lemonada', cursive;
+      font-family: 'Yusei Magic', sans-serif;
+      font-weight: 900;
+      color: #0a043c;
+
+    }
+    h1:hover {
+      color: #008891;
+    }
+
+    h3 {
+      color: #00587a;
+      font-family: 'Abel', sans-serif;
+      font-family: 'Lemonada', cursive;
+      font-family: 'Yusei Magic', sans-serif;
+    }
+  h3:hover {
+    color: #008891;
+  }
+    h4 {
+      font-family: 'Yusei Magic', sans-serif;
+      color: inherit;
+    }
+
+
+
+    .topline {
+      border: dotted;
+      border-color: #62959c;
+      border-top: none;
+      border-collapse: separate;
+      border-width: 300%;
+      border-left-width: 1px;
+      padding: 0 10px;
+    }
+
+    .inid {
+      border-radius: 100px;
+      text-align: center;
+      padding-top: 12px;
+      padding-bottom: 10px;
+      width: 30%;
+      border-decoration: none;
+      text-decoration: none;
+      font-size: 15px;
+      text-align: justify;
+      padding-left: 10px;
+      font-family: cursive;
+
+    }
+    .inid:hover {
+    border-radius: 70px;
+    border-style: none;
+
+    }
+
+    .btn {
+      border-radius: 20px;
+      text-decoration: none;
+      background-color: #a3ddcb;
+      font-family: 'Abel', sans-serif;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Lemonada', cursive;
+      font-family: 'Varela Round', sans-serif;
+      font-family: 'Yusei Magic', sans-serif;
+    }
+    .btn:hover {
+    background-color: #00587a;
+
+    }
+
+    #report {
+      font-family: 'Abel', sans-serif;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Lemonada', cursive;
+      font-family: 'Yusei Magic', sans-serif;
+    }
+    #report:hover {
+      color: #1687a7;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="top">
+    <center>
+      <form id="myform">
+
+        <h1 class="up">Convert SGPA into Percentage</h1>
+        <h3>Enter your SGPA and Calculate overall Percentage</h3>
+        <h3>Which help you to know how much effort you needed in sem 5 and sem 6 </h3>
+        <h3>so that you can achive your required percentile...</h3>
+        <h4>Enter your SGPA:</h4>
+        <br>
+
+
+        <input max="10" min="1" type="number" class="inid" name="inid1" value="" id="in1" placeholder="1st sem SGPA" required>
+        <br><br>
+
+        <input max="10" min="1" type="number" class="inid" name="inid2" value="" id="in2" placeholder="2nd sem SGPA" required>
+        <br><br>
+
+        <input max="10" min="1" type="number" class="inid" name="inid3" value="" id="in3" placeholder="3rd sem SGPA" required>
+        <br>
+        <br>
+
+        <input max="10" min="1" type="number" class="inid" name="inid4" value="" id="in4" placeholder="4th sem SGPA" required>
+        <br><br>
+
+
+
+
+        <button type="submit" class="btn" name="button" onclick="cal()">CALCULATE</button>
+      </form>
+      <br>
+      <p id="report"> </p>
+
+    </center>
+
+    <script type="text/javascript">
+      myform.onsubmit = function() {
+        //agar tum yaa paad raha hoo too matlab, tum Seekana chahataho good
+        return false
+      }
+
+      function cal() {
+        const sem1 = parseInt(document.getElementById("in1").value);
+        const sem2 = parseInt(document.getElementById("in2").value);
+        const sem3 = parseInt(document.getElementById("in3").value);
+        const sem4 = parseInt(document.getElementById("in4").value);
+
+
+        const sum = sem1 + sem2 + sem3 + sem4;
+
+        const divide = (sum / 4);
+
+        const percentage = ((divide * 10) - 7.5);
+
+        if (percentage <= (92.5) && percentage > 0) {
+          document.getElementById("report").innerHTML = "percentage : " + percentage + "%";
+
+        } else {
+
+          document.getElementById("report").innerHTML = ('Please Enter your correct SGPA');
+        }
+
+
+      }
+    </script>
+  </div>
+  <center>
+    <br>
+<h3>Somewhere something happen incredible for you...</h3>
+</center>
+</body>
+
+</html>
